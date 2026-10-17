@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 class FragmentLogin: Fragment() {
     private lateinit var ETX_FRGLogin_UserName: EditText
@@ -22,7 +23,7 @@ class FragmentLogin: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_login,container, true)
+        return inflater.inflate(R.layout.fragment_login,container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -64,6 +65,7 @@ class FragmentLogin: Fragment() {
                 requireContext(),
                 getString(R.string.loginWelcome),
                 Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_login_to_products_List)
         }
         else
         {
