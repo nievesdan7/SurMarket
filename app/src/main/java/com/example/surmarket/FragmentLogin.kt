@@ -78,7 +78,7 @@ class FragmentLogin: Fragment() {
 
     private fun verifyIntegrity(user: String, password: String): Boolean {
         var res = true
-        if(user.isNotEmpty()){
+        if(user.isEmpty()){
             ETX_FRGLogin_UserName.error=getString(R.string.userEmpty)
             res=false
         }
@@ -87,7 +87,7 @@ class FragmentLogin: Fragment() {
             ETX_FRGLogin_UserName.error=null
         }
 
-        if(user.isNotEmpty()){
+        if(user.isEmpty()){
             ETX_FRGLogin_Password.error=getString(R.string.passwordEmpty)
             res=false
         }
